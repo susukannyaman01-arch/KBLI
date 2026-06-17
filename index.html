@@ -134,6 +134,17 @@
             color: black !important;
             font-size: 11pt;
         }
+        body.pdf-mode * {
+            animation: none !important;
+            transition: none !important;
+        }
+        body.pdf-mode .glass-card {
+            background: white !important;
+            backdrop-filter: none !important;
+            filter: none !important;
+            box-shadow: none !important;
+            border: 1px solid #cbd5e1 !important;
+        }
         body.pdf-mode .no-print {
             display: none !important;
         }
@@ -1067,15 +1078,25 @@
                 jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
             };
 
-            // Use html2pdf to download
-            html2pdf().set(opt).from(element).save().then(() => {
-                document.body.classList.remove('pdf-mode');
-            }).catch(err => {
-                console.error("Gagal membuat PDF:", err);
+            try {
+                if (typeof html2pdf === 'undefined') {
+                    throw new Error("html2pdf library is not loaded");
+                }
+                // Use html2pdf to download
+                html2pdf().set(opt).from(element).save().then(() => {
+                    document.body.classList.remove('pdf-mode');
+                }).catch(err => {
+                    console.error("Gagal membuat PDF:", err);
+                    document.body.classList.remove('pdf-mode');
+                    // Fallback to print if library fails
+                    window.print();
+                });
+            } catch (err) {
+                console.error("Gagal memanggil html2pdf:", err);
                 document.body.classList.remove('pdf-mode');
                 // Fallback to print if library fails
                 window.print();
-            });
+            }
         }
     </script>
 </body>
