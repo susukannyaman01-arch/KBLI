@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -27,7 +30,7 @@
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
         }
-        
+
         .glass-card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -42,20 +45,29 @@
         }
 
         /* Hide default spin buttons */
-        input[type=number]::-webkit-inner-spin-button, 
-        input[type=number]::-webkit-outer-spin-button { 
-            -webkit-appearance: none; 
-            margin: 0; 
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
+
         input[type=number] {
             -moz-appearance: textfield;
         }
 
         /* Toast slide-in animation */
         @keyframes slideIn {
-            from { transform: translateY(100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
+
         .toast-animate {
             animation: slideIn 0.3s ease-out forwards;
         }
@@ -66,6 +78,7 @@
                 size: A4;
                 margin: 1.2cm 1.5cm;
             }
+
             body {
                 background: white !important;
                 color: black !important;
@@ -73,12 +86,15 @@
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
+
             .no-print {
                 display: none !important;
             }
+
             .print-only {
                 display: block !important;
             }
+
             /* Flatten glass-card effects for clean print */
             .glass-card {
                 background: white !important;
@@ -88,17 +104,22 @@
                 box-shadow: none !important;
                 border: 1px solid #cbd5e1 !important;
             }
+
             /* Avoid page break inside cards */
-            .glass-card, section, .space-y-6 > div {
+            .glass-card,
+            section,
+            .space-y-6>div {
                 page-break-inside: avoid;
                 break-inside: avoid;
             }
+
             /* Preserve 2-column layout on print */
             #kalkulator_forms {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
                 gap: 1cm !important;
             }
+
             .print-container {
                 box-shadow: none !important;
                 border: none !important;
@@ -108,26 +129,32 @@
                 max-width: 100% !important;
                 margin: 0 !important;
             }
+
             .print-table {
                 border-collapse: collapse !important;
                 width: 100% !important;
             }
-            .print-table th, .print-table td {
+
+            .print-table th,
+            .print-table td {
                 border: 1px solid #1e293b !important;
                 padding: 6px 8px !important;
             }
+
             .print-table th {
                 background-color: #f1f5f9 !important;
                 color: black !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
+
             .print-title {
                 font-size: 16pt !important;
                 text-align: center;
                 margin-bottom: 20px;
                 font-weight: bold;
             }
+
             .print-section-title {
                 font-size: 13pt !important;
                 font-weight: bold;
@@ -135,7 +162,9 @@
                 border-bottom: 2px solid #000;
                 padding-bottom: 4px;
             }
-            input, select {
+
+            input,
+            select {
                 border: none !important;
                 background: transparent !important;
                 padding: 0 !important;
@@ -144,12 +173,14 @@
                 color: black !important;
                 font-weight: 500 !important;
             }
+
             .print-badge {
                 border: 1px solid #000 !important;
                 background: transparent !important;
                 color: black !important;
                 padding: 2px 6px !important;
             }
+
             /* Color accents - keep them on print */
             .bg-emerald-50 {
                 background-color: #f0fdf4 !important;
@@ -159,16 +190,20 @@
         }
     </style>
 </head>
+
 <body class="py-8 px-4 sm:px-6 lg:px-8 font-sans">
 
     <!-- Container Utama -->
     <div class="max-w-7xl mx-auto">
-        
+
         <!-- AUTHOR CREDITS -->
         <div class="text-center mb-2 no-print select-none">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/60 backdrop-blur-md border border-slate-200 text-[10px] font-extrabold tracking-widest text-slate-500 rounded-full shadow-sm">
-                <svg class="w-3.5 h-3.5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+            <span
+                class="inline-flex items-center gap-1.5 px-3 py-1 bg-white/60 backdrop-blur-md border border-slate-200 text-[10px] font-extrabold tracking-widest text-slate-500 rounded-full shadow-sm">
+                <svg class="w-3.5 h-3.5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                        clip-rule="evenodd"></path>
                 </svg>
                 BY : DIAR FREDI ERAWA
             </span>
@@ -176,14 +211,19 @@
 
         <!-- HEADER (no-print) -->
         <header class="mb-8 text-center no-print">
-            <div class="inline-flex items-center justify-center p-3 bg-gradient-to-tr from-emerald-500 to-teal-600 rounded-2xl shadow-lg shadow-emerald-500/20 mb-4 animate-bounce">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 11h.01M12 7h.01M15 11h.01M3 12a9 9 0 1118 0 8.97 8.97 0 01-2.25 5.858A9 9 0 0110.15 22h-1.3A9 9 0 013 12z"></path>
+            <div
+                class="inline-flex items-center justify-center p-3 bg-gradient-to-tr from-emerald-500 to-teal-600 rounded-2xl shadow-lg shadow-emerald-500/20 mb-4 animate-bounce">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 11h.01M12 7h.01M15 11h.01M3 12a9 9 0 1118 0 8.97 8.97 0 01-2.25 5.858A9 9 0 0110.15 22h-1.3A9 9 0 013 12z">
+                    </path>
                 </svg>
             </div>
             <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-800 tracking-tight">Kalkulator Finansial KBLI</h1>
             <p class="mt-2 text-sm sm:text-base text-slate-500 max-w-2xl mx-auto">
-                Perhitungan pendapatan dan pengeluaran usaha otomatis secara bulanan & tahunan disesuaikan dengan jenis lapangan usaha responden.
+                Perhitungan pendapatan dan pengeluaran usaha otomatis secara bulanan & tahunan disesuaikan dengan jenis
+                lapangan usaha responden.
             </p>
         </header>
 
@@ -192,219 +232,273 @@
 
             <!-- HEADER UNTUK CETAK/PRINT ONLY -->
             <div class="hidden print-only mb-6">
-            <div class="print-title">LEMBAR PERHITUNGAN REKAPITULASI KEUANGAN RESPONDEN</div>
-            <div class="border-b-4 border-double border-slate-800 my-4"></div>
-        </div>
+                <div class="print-title">LEMBAR PERHITUNGAN REKAPITULASI KEUANGAN RESPONDEN</div>
+                <div class="border-b-4 border-double border-slate-800 my-4"></div>
+            </div>
 
-        <!-- CARD IDENTITAS RESPONDEN -->
-        <section class="glass-card rounded-2xl p-6 mb-8 border border-white">
-            <h2 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2 border-b border-slate-100 pb-3">
-                <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                </svg>
-                Identitas Responden
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Nama Responden -->
-                <div>
-                    <label for="nama_responden" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Nama Responden</label>
-                    <input type="text" id="nama_responden" class="w-full bg-slate-50 hover:bg-slate-100 focus:bg-white text-slate-800 font-medium px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all" placeholder="Masukkan nama responden" required>
+            <!-- CARD IDENTITAS RESPONDEN -->
+            <section class="glass-card rounded-2xl p-6 mb-8 border border-white">
+                <h2
+                    class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2 border-b border-slate-100 pb-3">
+                    <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                    Identitas Responden
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Nama Responden -->
+                    <div>
+                        <label for="nama_responden"
+                            class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Nama
+                            Responden</label>
+                        <input type="text" id="nama_responden"
+                            class="w-full bg-slate-50 hover:bg-slate-100 focus:bg-white text-slate-800 font-medium px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
+                            placeholder="Masukkan nama responden" required>
+                    </div>
+                    <!-- Satuan Lingkungan Setempat (SLS) -->
+                    <div>
+                        <label for="sls"
+                            class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Satuan
+                            Lingkungan Setempat (SLS)</label>
+                        <input type="text" id="sls"
+                            class="w-full bg-slate-50 hover:bg-slate-100 focus:bg-white text-slate-800 font-medium px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all"
+                            placeholder="Masukkan nama SLS / RT / RW" required>
+                    </div>
+                    <!-- KBLI Select -->
+                    <div>
+                        <label for="kbli_select"
+                            class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Klasifikasi
+                            Usaha (KBLI)</label>
+                        <div class="relative">
+                            <select id="kbli_select"
+                                class="w-full bg-slate-50 hover:bg-slate-100 focus:bg-white text-slate-800 font-semibold px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all appearance-none cursor-pointer">
+                                <option value="">-- Pilih KBLI --</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500 no-print">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- Satuan Lingkungan Setempat (SLS) -->
-                <div>
-                    <label for="sls" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Satuan Lingkungan Setempat (SLS)</label>
-                    <input type="text" id="sls" class="w-full bg-slate-50 hover:bg-slate-100 focus:bg-white text-slate-800 font-medium px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all" placeholder="Masukkan nama SLS / RT / RW" required>
+                <!-- Info Box KBLI Dinamis -->
+                <div id="kbli_info_box"
+                    class="mt-4 p-4 bg-emerald-50 border border-emerald-100 text-emerald-800 rounded-xl text-sm font-medium hidden flex items-start gap-2.5">
+                    <svg class="w-5 h-5 text-emerald-600 mt-0.5 shrink-0" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <div>
+                        <span class="font-bold text-emerald-950" id="kbli_info_title"></span>
+                        <p class="text-xs mt-0.5 text-emerald-700">Formulir isian di bawah telah disesuaikan secara
+                            otomatis berdasarkan rincian standar pengeluaran dan pendapatan kategori usaha ini.</p>
+                    </div>
                 </div>
-                <!-- KBLI Select -->
-                <div>
-                    <label for="kbli_select" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Klasifikasi Usaha (KBLI)</label>
-                    <div class="relative">
-                        <select id="kbli_select" class="w-full bg-slate-50 hover:bg-slate-100 focus:bg-white text-slate-800 font-semibold px-4 py-3 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition-all appearance-none cursor-pointer">
-                            <option value="">-- Pilih KBLI --</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500 no-print">
-                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+            </section>
+
+            <!-- PERINGATAN / PETUNJUK (PILIH KBLI TERLEBIH DAHULU) -->
+            <div id="pilih_kbli_prompt" class="glass-card rounded-2xl p-10 text-center border border-white no-print">
+                <div class="inline-flex items-center justify-center p-4 bg-slate-100 rounded-full text-slate-400 mb-4">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-slate-700">Formulir Belum Terbuka</h3>
+                <p class="text-slate-500 text-sm max-w-sm mx-auto mt-2">Pilih jenis Klasifikasi Usaha (KBLI) terlebih
+                    dahulu di atas untuk menampilkan rincian isian pendapatan dan pengeluaran.</p>
+            </div>
+
+            <!-- FORM UTAMA DINAMIS -->
+            <div id="kalkulator_forms" class="hidden grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+
+                <!-- KOLOM KIRI: CARD PENDAPATAN -->
+                <div class="space-y-8">
+                    <div
+                        class="bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-2xl p-4 sm:p-5 shadow-lg shadow-emerald-500/10 no-print flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-white/20 p-2 rounded-xl text-white">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h2 class="text-lg font-bold text-white leading-tight">PENDAPATAN</h2>
+                                <p class="text-xs text-emerald-100">Rincian penerimaan usaha responden</p>
+                            </div>
+                        </div>
+                        <div class="text-right text-white">
+                            <div class="text-xs uppercase font-bold text-emerald-200">Total Setahun</div>
+                            <div class="text-lg font-black tracking-tight" id="header_total_income">Rp 0</div>
+                        </div>
+                    </div>
+
+                    <div class="hidden print-only print-section-title">PENDAPATAN USAHA</div>
+
+                    <!-- Bagian Pendapatan Dinamis (akan dirender oleh JS) -->
+                    <div id="income_sections_container" class="space-y-6"></div>
+                </div>
+
+                <!-- KOLOM KANAN: CARD PENGELUARAN -->
+                <div class="space-y-8">
+                    <div
+                        class="bg-gradient-to-r from-rose-600 to-rose-700 rounded-2xl p-4 sm:p-5 shadow-lg shadow-rose-500/10 no-print flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-white/20 p-2 rounded-xl text-white">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h2 class="text-lg font-bold text-white leading-tight">PENGELUARAN</h2>
+                                <p class="text-xs text-rose-100">Rincian beban biaya operasional & non-operasional</p>
+                            </div>
+                        </div>
+                        <div class="text-right text-white">
+                            <div class="text-xs uppercase font-bold text-rose-200">Total Setahun</div>
+                            <div class="text-lg font-black tracking-tight" id="header_total_expense">Rp 0</div>
+                        </div>
+                    </div>
+
+                    <div class="hidden print-only print-section-title">PENGELUARAN USAHA</div>
+
+                    <!-- Bagian Pengeluaran Dinamis (akan dirender oleh JS) -->
+                    <div id="expense_sections_container" class="space-y-6"></div>
+                </div>
+
+            </div>
+
+            <!-- STICKY SUMMARY & ACTION BAR (no-print) -->
+            <section id="summary_action_bar"
+                class="hidden glass-card rounded-2xl p-4 sm:p-6 border border-white relative sm:sticky bottom-6 shadow-xl shadow-slate-900/10 z-10 mt-8 sm:mt-0 no-print">
+                <!-- Alert Warning Defisit -->
+                <div id="deficit_warning_alert"
+                    class="hidden mb-4 p-3.5 bg-rose-50 border border-rose-200 text-rose-800 rounded-xl text-xs font-semibold flex items-center gap-2.5 animate-pulse">
+                    <svg class="w-5 h-5 text-rose-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                        </path>
+                    </svg>
+                    <span>Peringatan: Pengeluaran usaha lebih besar dari pendapatan (Defisit)! Harap periksa kembali
+                        rincian data Anda.</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 items-center">
+                    <!-- Pendapatan -->
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Total Pendapatan
+                        </div>
+                        <div class="text-sm font-bold text-slate-800" id="summary_monthly_income">Bulan: Rp 0</div>
+                        <div class="text-base font-extrabold text-emerald-600" id="summary_yearly_income">Tahun: Rp 0
+                        </div>
+                    </div>
+                    <!-- Pengeluaran -->
+                    <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Total
+                            Pengeluaran</div>
+                        <div class="text-sm font-bold text-slate-800" id="summary_monthly_expense">Bulan: Rp 0</div>
+                        <div class="text-base font-extrabold text-rose-600" id="summary_yearly_expense">Tahun: Rp 0
+                        </div>
+                    </div>
+                    <!-- Net Profit / Loss -->
+                    <div class="p-3 rounded-xl border" id="net_box">
+                        <div class="text-[10px] font-bold uppercase tracking-wider mb-1" id="net_title">Margin Bersih
+                            (Surplus)</div>
+                        <div class="text-sm font-bold text-slate-800" id="summary_monthly_net">Bulan: Rp 0</div>
+                        <div class="text-lg font-black" id="summary_yearly_net">Tahun: Rp 0</div>
+                    </div>
+                    <!-- Action Buttons -->
+                    <div class="flex flex-row md:flex-col lg:flex-row gap-3 w-full justify-end">
+                        <!-- Reset Button -->
+                        <button onclick="resetCalculator()"
+                            class="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-sm transition-all flex items-center justify-center gap-2 outline-none focus:ring-2 focus:ring-slate-300">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                                </path>
                             </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Info Box KBLI Dinamis -->
-            <div id="kbli_info_box" class="mt-4 p-4 bg-emerald-50 border border-emerald-100 text-emerald-800 rounded-xl text-sm font-medium hidden flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-emerald-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                <div>
-                    <span class="font-bold text-emerald-950" id="kbli_info_title"></span>
-                    <p class="text-xs mt-0.5 text-emerald-700">Formulir isian di bawah telah disesuaikan secara otomatis berdasarkan rincian standar pengeluaran dan pendapatan kategori usaha ini.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PERINGATAN / PETUNJUK (PILIH KBLI TERLEBIH DAHULU) -->
-        <div id="pilih_kbli_prompt" class="glass-card rounded-2xl p-10 text-center border border-white no-print">
-            <div class="inline-flex items-center justify-center p-4 bg-slate-100 rounded-full text-slate-400 mb-4">
-                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                </svg>
-            </div>
-            <h3 class="text-lg font-bold text-slate-700">Formulir Belum Terbuka</h3>
-            <p class="text-slate-500 text-sm max-w-sm mx-auto mt-2">Pilih jenis Klasifikasi Usaha (KBLI) terlebih dahulu di atas untuk menampilkan rincian isian pendapatan dan pengeluaran.</p>
-        </div>
-
-        <!-- FORM UTAMA DINAMIS -->
-        <div id="kalkulator_forms" class="hidden grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            
-            <!-- KOLOM KIRI: CARD PENDAPATAN -->
-            <div class="space-y-8">
-                <div class="bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-2xl p-4 sm:p-5 shadow-lg shadow-emerald-500/10 no-print flex items-center justify-between">
-                    <div class="flex items-center gap-3">
-                        <div class="bg-white/20 p-2 rounded-xl text-white">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            Reset
+                        </button>
+                        <!-- PDF Button -->
+                        <button onclick="exportToPDF()" id="btn_unduh_pdf"
+                            class="flex-1 py-3 px-5 bg-gradient-to-tr from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold rounded-xl text-sm transition-all shadow-md shadow-emerald-600/10 flex items-center justify-center gap-2 outline-none focus:ring-2 focus:ring-emerald-500">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                             </svg>
-                        </div>
-                        <div>
-                            <h2 class="text-lg font-bold text-white leading-tight">PENDAPATAN</h2>
-                            <p class="text-xs text-emerald-100">Rincian penerimaan usaha responden</p>
-                        </div>
-                    </div>
-                    <div class="text-right text-white">
-                        <div class="text-xs uppercase font-bold text-emerald-200">Total Setahun</div>
-                        <div class="text-lg font-black tracking-tight" id="header_total_income">Rp 0</div>
+                            Unduh PDF
+                        </button>
                     </div>
                 </div>
+            </section>
 
-                <div class="hidden print-only print-section-title">PENDAPATAN USAHA</div>
+            <!-- PRINT SUMMARY BLOCK (print-only) -->
+            <section class="hidden print-only mt-8">
+                <h3 class="print-section-title">REKAPITULASI SURPLUS / DEFISIT USAHA</h3>
+                <table class="print-table mt-4 w-full">
+                    <thead>
+                        <tr>
+                            <th class="text-left">URAIAN</th>
+                            <th class="text-right">JUMLAH BULANAN (Rp)</th>
+                            <th class="text-right">JUMLAH TAHUNAN (Rp)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold">Total Pendapatan Usaha (A)</td>
+                            <td class="text-right font-bold text-emerald-800" id="print_total_income_m">0</td>
+                            <td class="text-right font-bold text-emerald-800" id="print_total_income_y">0</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">Total Pengeluaran Usaha (B)</td>
+                            <td class="text-right font-bold text-rose-800" id="print_total_expense_m">0</td>
+                            <td class="text-right font-bold text-rose-800" id="print_total_expense_y">0</td>
+                        </tr>
+                        <tr class="bg-slate-100">
+                            <td class="font-bold uppercase" id="print_net_label">SURPLUS / DEFISIT BERSIH (A - B)</td>
+                            <td class="text-right font-black" id="print_net_m">0</td>
+                            <td class="text-right font-black" id="print_net_y">0</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                <!-- Bagian Pendapatan Dinamis (akan dirender oleh JS) -->
-                <div id="income_sections_container" class="space-y-6"></div>
-            </div>
-
-            <!-- KOLOM KANAN: CARD PENGELUARAN -->
-            <div class="space-y-8">
-                <div class="bg-gradient-to-r from-rose-600 to-rose-700 rounded-2xl p-4 sm:p-5 shadow-lg shadow-rose-500/10 no-print flex items-center justify-between">
-                    <div class="flex items-center gap-3">
-                        <div class="bg-white/20 p-2 rounded-xl text-white">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h2 class="text-lg font-bold text-white leading-tight">PENGELUARAN</h2>
-                            <p class="text-xs text-rose-100">Rincian beban biaya operasional & non-operasional</p>
-                        </div>
+                <!-- Tanda Tangan -->
+                <div class="mt-12 grid grid-cols-2 gap-6 text-center text-xs">
+                    <div>
+                        <div>Petugas Lapangan / Surveyor</div>
+                        <div class="h-20 border-b border-dashed border-black max-w-xs mx-auto"></div>
+                        <div class="mt-2">( _______________________ )</div>
                     </div>
-                    <div class="text-right text-white">
-                        <div class="text-xs uppercase font-bold text-rose-200">Total Setahun</div>
-                        <div class="text-lg font-black tracking-tight" id="header_total_expense">Rp 0</div>
+                    <div>
+                        <div>Responden / Pemilik Usaha</div>
+                        <div class="h-20 border-b border-dashed border-black max-w-xs mx-auto"></div>
+                        <div class="mt-2" id="print_resp_name">( _______________________ )</div>
                     </div>
                 </div>
-
-                <div class="hidden print-only print-section-title">PENGELUARAN USAHA</div>
-
-                <!-- Bagian Pengeluaran Dinamis (akan dirender oleh JS) -->
-                <div id="expense_sections_container" class="space-y-6"></div>
-            </div>
-
-        </div>
-
-        <!-- STICKY SUMMARY & ACTION BAR (no-print) -->
-        <section id="summary_action_bar" class="hidden glass-card rounded-2xl p-4 sm:p-6 border border-white relative sm:sticky bottom-6 shadow-xl shadow-slate-900/10 z-10 mt-8 sm:mt-0 no-print">
-            <!-- Alert Warning Defisit -->
-            <div id="deficit_warning_alert" class="hidden mb-4 p-3.5 bg-rose-50 border border-rose-200 text-rose-800 rounded-xl text-xs font-semibold flex items-center gap-2.5 animate-pulse">
-                <svg class="w-5 h-5 text-rose-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                </svg>
-                <span>Peringatan: Pengeluaran usaha lebih besar dari pendapatan (Defisit)! Harap periksa kembali rincian data Anda.</span>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 items-center">
-                <!-- Pendapatan -->
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Total Pendapatan</div>
-                    <div class="text-sm font-bold text-slate-800" id="summary_monthly_income">Bulan: Rp 0</div>
-                    <div class="text-base font-extrabold text-emerald-600" id="summary_yearly_income">Tahun: Rp 0</div>
-                </div>
-                <!-- Pengeluaran -->
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Total Pengeluaran</div>
-                    <div class="text-sm font-bold text-slate-800" id="summary_monthly_expense">Bulan: Rp 0</div>
-                    <div class="text-base font-extrabold text-rose-600" id="summary_yearly_expense">Tahun: Rp 0</div>
-                </div>
-                <!-- Net Profit / Loss -->
-                <div class="p-3 rounded-xl border" id="net_box">
-                    <div class="text-[10px] font-bold uppercase tracking-wider mb-1" id="net_title">Margin Bersih (Surplus)</div>
-                    <div class="text-sm font-bold text-slate-800" id="summary_monthly_net">Bulan: Rp 0</div>
-                    <div class="text-lg font-black" id="summary_yearly_net">Tahun: Rp 0</div>
-                </div>
-                <!-- Action Buttons -->
-                <div class="flex flex-row md:flex-col lg:flex-row gap-3 w-full justify-end">
-                    <!-- Reset Button -->
-                    <button onclick="resetCalculator()" class="flex-1 py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-sm transition-all flex items-center justify-center gap-2 outline-none focus:ring-2 focus:ring-slate-300">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                        </svg>
-                        Reset
-                    </button>
-                    <!-- PDF Button -->
-                    <button onclick="exportToPDF()" id="btn_unduh_pdf" class="flex-1 py-3 px-5 bg-gradient-to-tr from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold rounded-xl text-sm transition-all shadow-md shadow-emerald-600/10 flex items-center justify-center gap-2 outline-none focus:ring-2 focus:ring-emerald-500">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                        </svg>
-                        Unduh PDF
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- PRINT SUMMARY BLOCK (print-only) -->
-        <section class="hidden print-only mt-8">
-            <h3 class="print-section-title">REKAPITULASI SURPLUS / DEFISIT USAHA</h3>
-            <table class="print-table mt-4 w-full">
-                <thead>
-                    <tr>
-                        <th class="text-left">URAIAN</th>
-                        <th class="text-right">JUMLAH BULANAN (Rp)</th>
-                        <th class="text-right">JUMLAH TAHUNAN (Rp)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="font-bold">Total Pendapatan Usaha (A)</td>
-                        <td class="text-right font-bold text-emerald-800" id="print_total_income_m">0</td>
-                        <td class="text-right font-bold text-emerald-800" id="print_total_income_y">0</td>
-                    </tr>
-                    <tr>
-                        <td class="font-bold">Total Pengeluaran Usaha (B)</td>
-                        <td class="text-right font-bold text-rose-800" id="print_total_expense_m">0</td>
-                        <td class="text-right font-bold text-rose-800" id="print_total_expense_y">0</td>
-                    </tr>
-                    <tr class="bg-slate-100">
-                        <td class="font-bold uppercase" id="print_net_label">SURPLUS / DEFISIT BERSIH (A - B)</td>
-                        <td class="text-right font-black" id="print_net_m">0</td>
-                        <td class="text-right font-black" id="print_net_y">0</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- Tanda Tangan -->
-            <div class="mt-12 grid grid-cols-2 gap-6 text-center text-xs">
-                <div>
-                    <div>Petugas Lapangan / Surveyor</div>
-                    <div class="h-20 border-b border-dashed border-black max-w-xs mx-auto"></div>
-                    <div class="mt-2">( _______________________ )</div>
-                </div>
-                <div>
-                    <div>Responden / Pemilik Usaha</div>
-                    <div class="h-20 border-b border-dashed border-black max-w-xs mx-auto"></div>
-                    <div class="mt-2" id="print_resp_name">( _______________________ )</div>
-                </div>
-            </div>
-        </section>
+            </section>
 
         </div> <!-- Selesai AREA CETAK/PDF -->
 
         <!-- AUTO-SAVE TOAST (no-print) -->
-        <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-slate-100 px-4 py-3 rounded-2xl shadow-xl z-50 text-xs font-semibold hidden items-center gap-2 toast-animate no-print">
+        <div id="toast"
+            class="fixed bottom-6 right-6 bg-slate-900 text-slate-100 px-4 py-3 rounded-2xl shadow-xl z-50 text-xs font-semibold hidden items-center gap-2 toast-animate no-print">
             <div class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></div>
             <span>Draft tersimpan secara otomatis</span>
         </div>
@@ -414,8 +508,8 @@
     <!-- JAVASCRIPT LOGIC -->
     <script>
         // Data KBLI yang di-generate otomatis
-        const KBLI_CONFIG = {'A': {'name': 'Pertanian', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Hasil Panen'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Pengolah Lahan'}, {'key': 'upah_2', 'label': 'Upah Pemanenan'}, {'key': 'upah_3', 'label': 'Upah Pekerja'}], 'produksi': [{'key': 'produksi_1', 'label': 'Pupuk dan Pestisida'}, {'key': 'produksi_2', 'label': 'Bibit'}, {'key': 'produksi_3', 'label': 'Beli Anakan'}, {'key': 'produksi_4', 'label': 'Vaksin/Vitamin'}], 'operasional': [{'key': 'operasional_1', 'label': 'Listrik dan Air'}, {'key': 'operasional_2', 'label': 'Transportasi Hasil Panen'}, {'key': 'operasional_3', 'label': 'Pemeliharaan'}], 'non_operasional': [{'key': 'non_operasional_1', 'label': 'Retribusi Desa/Kab'}]}}, 'B': {'name': 'Pertambangan dan Penggalian', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Hasil Tambang'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Pekerja'}], 'produksi': [{'key': 'produksi_1', 'label': 'Sewa Alat Berta'}, {'key': 'produksi_2', 'label': 'ATK dll'}], 'operasional': [{'key': 'operasional_1', 'label': 'Listrik dan BBM'}], 'non_operasional': [{'key': 'non_operasional_1', 'label': 'Izin dll'}]}}, 'C': {'name': 'Industri', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Hasil Industri'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Pekerja'}], 'produksi': [{'key': 'produksi_1', 'label': 'Pembelian Bahan Baku'}, {'key': 'produksi_2', 'label': 'BBM'}]}}, 'D': {'name': 'Penyediaan Listrik, Gas, Air , Uap/air panas, dan udara dingin', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Hasil Penjualan'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Pekerja'}], 'produksi': [{'key': 'produksi_1', 'label': 'Pembelian LPG'}, {'key': 'produksi_2', 'label': 'Pembelian LNG'}], 'operasional': [{'key': 'operasional_1', 'label': 'BBM'}]}}, 'E': {'name': 'Penyediaan Air, Pengelolahan Limbah, Penanganan Limbah dan Remediasi', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Hasil Penjualan'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Pekerja'}], 'produksi': [{'key': 'produksi_1', 'label': 'Biaya Air'}, {'key': 'produksi_2', 'label': 'Pembelian Bahan Kimia'}], 'operasional': [{'key': 'operasional_1', 'label': 'Perbaikan alat-alat'}, {'key': 'operasional_2', 'label': 'BBM'}]}}, 'F': {'name': 'Konstruksi', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Nilai Borongan/Kontrak'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Pekerja'}], 'produksi': [{'key': 'produksi_1', 'label': 'Pembelian Bahan Baku Material (Pasir,Semen,dll)'}], 'operasional': [{'key': 'operasional_1', 'label': 'Listrik, Air, BBM'}]}}, 'G': {'name': 'Perdagangan Besar dan Eceran', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Hasil Penjualan'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Pekerja'}], 'produksi': [{'key': 'produksi_1', 'label': 'Plastik Pembungkus dan Pengikat'}], 'pembelian_barang': [{'key': 'pembelian_barang_1', 'label': 'Pembelian Barang Dagangan'}], 'operasional': [{'key': 'operasional_1', 'label': 'ATK'}, {'key': 'operasional_2', 'label': 'Listrik'}, {'key': 'operasional_3', 'label': 'Air'}, {'key': 'operasional_4', 'label': 'BBM'}], 'non_operasional': [{'key': 'non_operasional_1', 'label': 'Retribusi, Pajak, Sewa Bangunan'}]}}, 'H': {'name': 'Transportasi dan Penyimpanan', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Hasil Penjualan/Sewa'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Pekerja'}], 'produksi': [{'key': 'produksi_1', 'label': 'BBM dan Pelumas'}], 'operasional': [{'key': 'operasional_1', 'label': 'Perawatan Kendaraan'}]}}, 'I': {'name': 'Aktivitas Penyediaan Akomodasi dan Makan Minum', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Hasil Penjualan/Sewa'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Pekerja'}], 'produksi': [{'key': 'produksi_1', 'label': 'Pembelian Bahan Makanan dan Minuman'}, {'key': 'produksi_2', 'label': 'Ongkos Kirim Bahan Makanan dari Pasar'}], 'operasional': [{'key': 'operasional_1', 'label': 'Listrik'}, {'key': 'operasional_2', 'label': 'Gas'}, {'key': 'operasional_3', 'label': 'Air'}, {'key': 'operasional_4', 'label': 'Sewa tempat'}], 'non_operasional': [{'key': 'non_operasional_1', 'label': 'Retribusi, dll'}]}}, 'J': {'name': 'Aktivitas Penerbitan, Penyiaran, serta Produksi dan Distribusi Konten', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Hasil Pendapatan Usaha'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Pekerja'}], 'produksi': [{'key': 'produksi_1', 'label': 'Biaya Hak Siar Film'}], 'operasional': [{'key': 'operasional_1', 'label': 'Biaya Listrik'}, {'key': 'operasional_2', 'label': 'Opersional Kendaraan'}, {'key': 'operasional_3', 'label': 'Perawatan Alat'}, {'key': 'operasional_4', 'label': 'Biaya Telekomunikasi (pulsa)'}]}}, 'K': {'name': 'Aktivitas Telekomunikasi, Pemrograman Komputer, Konsultasi Infrastruktur Komputasi, dan Jasa Informasi Lainnya', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Hasil Pendapatan Usaha'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Karyawan'}], 'produksi': [{'key': 'produksi_1', 'label': 'Pembelian Voucher Pulsa, dan Kartu Perdana, Aksesoris Telekomunikasi'}], 'operasional': [{'key': 'operasional_1', 'label': 'Biaya Sewa Tempat'}, {'key': 'operasional_2', 'label': 'Biaya Listrik, Air , dll'}]}}, 'L': {'name': 'Aktivitas Keuangan dan Asuransi', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Perbankan'}, {'key': 'nilai_produksi_2', 'label': 'Simpan Pinjam'}, {'key': 'nilai_produksi_3', 'label': 'Asuransi'}, {'key': 'nilai_produksi_4', 'label': 'Jasa Penunjang Asuransi'}, {'key': 'nilai_produksi_5', 'label': 'Penukaran Valuta Asing'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Pegawai'}], 'produksi': [{'key': 'produksi_1', 'label': 'Biaya Pembelian Valuta Asing'}], 'operasional': [{'key': 'operasional_1', 'label': 'Listrik, Gas, Air'}, {'key': 'operasional_2', 'label': 'ATK Dll'}, {'key': 'operasional_3', 'label': 'Perawatan Peralatan Kerja'}, {'key': 'operasional_4', 'label': 'Sewa Tempat'}], 'non_operasional': [{'key': 'non_operasional_1', 'label': 'Pajak,Retribusi, dll'}]}}, 'O': {'name': 'Aktivitas Administratif dan Penunjang Usaha contoh Rental Mobil', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Pendapatan Usaha'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Pegawai'}], 'produksi': [{'key': 'produksi_1', 'label': 'Peralatan Mobil'}], 'operasional': [{'key': 'operasional_1', 'label': 'Listrik'}, {'key': 'operasional_2', 'label': 'Air'}, {'key': 'operasional_3', 'label': 'BBM'}], 'non_operasional': [{'key': 'non_operasional_1', 'label': 'Pajak'}]}}, 'Q': {'name': 'Pendidikan', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Penerimaan dari Murid'}, {'key': 'nilai_produksi_2', 'label': 'Penerimaan BOS'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Guru dan Pegawai Lainnya'}], 'produksi': [{'key': 'produksi_1', 'label': 'Cetak Buku Panduan dan Lembar Soal'}], 'operasional': [{'key': 'operasional_1', 'label': 'Listrik'}, {'key': 'operasional_2', 'label': 'Air'}, {'key': 'operasional_3', 'label': 'ATK'}], 'non_operasional': [{'key': 'non_operasional_1', 'label': 'Penyusutan Sarana pembelajaran'}]}}, 'R': {'name': 'Aktivitas Kesehatan Manusia, dan Aktivitas Sosial', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Pendapatan Pasien Berobat'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Pegawai'}], 'produksi': [{'key': 'produksi_1', 'label': 'Pembelian Obat-obatan'}, {'key': 'produksi_2', 'label': 'Masker, Sarung Tangan, Handsanitizer'}], 'operasional': [{'key': 'operasional_1', 'label': 'Listrik'}, {'key': 'operasional_2', 'label': 'Air, dll'}]}}, 'S': {'name': 'Kesenian, Hiburan, dan Rekreasi', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Pendapatan dari Tiket'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah Pegawai'}], 'produksi': [{'key': 'produksi_1', 'label': 'Cetak Tiket Masuk'}], 'operasional': [{'key': 'operasional_1', 'label': 'Air'}, {'key': 'operasional_2', 'label': 'Listrik'}]}}, 'T': {'name': 'Aktivitas Jasa Lainnya contoh salon', 'income': {'pendapatan_lainnya': [{'key': 'pendapatan_lainnya_1', 'label': 'Bunga'}, {'key': 'pendapatan_lainnya_2', 'label': 'Deviden'}, {'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer'}, {'key': 'pendapatan_lainnya_4', 'label': 'dll'}], 'nilai_produksi': [{'key': 'nilai_produksi_1', 'label': 'Pendapatan dari Jasa yang bersangkutan'}]}, 'expense': {'upah': [{'key': 'upah_1', 'label': 'Upah'}], 'produksi': [{'key': 'produksi_1', 'label': 'Bahan untuk Perawatan'}], 'operasional': [{'key': 'operasional_1', 'label': 'Listrik'}, {'key': 'operasional_2', 'label': 'Air'}, {'key': 'operasional_3', 'label': 'dll'}]}}};
-        const categoryMeta = {"income": {"nilai_produksi": {"title": "Nilai Produksi Barang dan Jasa", "desc": "Penerimaan utama hasil produksi barang atau penyediaan jasa.", "color": "emerald"}, "pendapatan_lainnya": {"title": "Pendapatan Lainnya dari Perusahaan", "desc": "Penerimaan non-utama seperti bunga bank, deviden, donasi, hibah, transfer, dll.", "color": "teal"}}, "expense": {"upah": {"title": "Upah, Gaji, Jaminan Sosial Pegawai", "desc": "Pengeluaran untuk upah pekerja, gaji staf, BPJS, tunjangan, dan jaminan sosial.", "color": "rose"}, "produksi": {"title": "Biaya Produksi", "desc": "Biaya operasional langsung seperti pembelian bahan baku, pupuk, bibit, bahan penolong, dll.", "color": "amber"}, "pembelian_barang": {"title": "Pembelian Barang Dijual", "desc": "Pembelian produk jadi yang dimaksudkan untuk langsung dijual kembali tanpa pengolahan.", "color": "orange"}, "operasional": {"title": "Biaya Operasional", "desc": "Biaya umum dan utilitas seperti listrik, air, BBM, internet, ATK, pemeliharaan alat, sewa tempat, dll.", "color": "sky"}, "non_operasional": {"title": "Biaya Non-Operasional", "desc": "Pengeluaran pendukung seperti pajak bumi/bangunan, retribusi daerah, bunga pinjaman, penyusutan aset, dll.", "color": "indigo"}}};
+        const KBLI_CONFIG = { 'A': { 'name': 'Pertanian', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Hasil Panen' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Pengolah Lahan' }, { 'key': 'upah_2', 'label': 'Upah Pemanenan' }, { 'key': 'upah_3', 'label': 'Upah Pekerja' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Pupuk dan Pestisida' }, { 'key': 'produksi_2', 'label': 'Bibit' }, { 'key': 'produksi_3', 'label': 'Beli Anakan' }, { 'key': 'produksi_4', 'label': 'Vaksin/Vitamin' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Listrik dan Air' }, { 'key': 'operasional_2', 'label': 'Transportasi Hasil Panen' }, { 'key': 'operasional_3', 'label': 'Pemeliharaan' }], 'non_operasional': [{ 'key': 'non_operasional_1', 'label': 'Retribusi Desa/Kab' }] } }, 'B': { 'name': 'Pertambangan dan Penggalian', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Hasil Tambang' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Pekerja' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Sewa Alat Berta' }, { 'key': 'produksi_2', 'label': 'ATK dll' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Listrik dan BBM' }], 'non_operasional': [{ 'key': 'non_operasional_1', 'label': 'Izin dll' }] } }, 'C': { 'name': 'Industri', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Hasil Industri' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Pekerja' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Pembelian Bahan Baku' }, { 'key': 'produksi_2', 'label': 'BBM' }] } }, 'D': { 'name': 'Penyediaan Listrik, Gas, Air , Uap/air panas, dan udara dingin', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Hasil Penjualan' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Pekerja' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Pembelian LPG' }, { 'key': 'produksi_2', 'label': 'Pembelian LNG' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'BBM' }] } }, 'E': { 'name': 'Penyediaan Air, Pengelolahan Limbah, Penanganan Limbah dan Remediasi', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Hasil Penjualan' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Pekerja' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Biaya Air' }, { 'key': 'produksi_2', 'label': 'Pembelian Bahan Kimia' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Perbaikan alat-alat' }, { 'key': 'operasional_2', 'label': 'BBM' }] } }, 'F': { 'name': 'Konstruksi', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Nilai Borongan/Kontrak' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Pekerja' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Pembelian Bahan Baku Material (Pasir,Semen,dll)' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Listrik, Air, BBM' }] } }, 'G': { 'name': 'Perdagangan Besar dan Eceran', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Hasil Penjualan' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Pekerja' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Plastik Pembungkus dan Pengikat' }], 'pembelian_barang': [{ 'key': 'pembelian_barang_1', 'label': 'Pembelian Barang Dagangan' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'ATK' }, { 'key': 'operasional_2', 'label': 'Listrik' }, { 'key': 'operasional_3', 'label': 'Air' }, { 'key': 'operasional_4', 'label': 'BBM' }], 'non_operasional': [{ 'key': 'non_operasional_1', 'label': 'Retribusi, Pajak, Sewa Bangunan' }] } }, 'H': { 'name': 'Transportasi dan Penyimpanan', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Hasil Penjualan/Sewa' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Pekerja' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'BBM dan Pelumas' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Perawatan Kendaraan' }] } }, 'I': { 'name': 'Aktivitas Penyediaan Akomodasi dan Makan Minum', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Hasil Penjualan/Sewa' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Pekerja' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Pembelian Bahan Makanan dan Minuman' }, { 'key': 'produksi_2', 'label': 'Ongkos Kirim Bahan Makanan dari Pasar' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Listrik' }, { 'key': 'operasional_2', 'label': 'Gas' }, { 'key': 'operasional_3', 'label': 'Air' }, { 'key': 'operasional_4', 'label': 'Sewa tempat' }], 'non_operasional': [{ 'key': 'non_operasional_1', 'label': 'Retribusi, dll' }] } }, 'J': { 'name': 'Aktivitas Penerbitan, Penyiaran, serta Produksi dan Distribusi Konten', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Hasil Pendapatan Usaha' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Pekerja' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Biaya Hak Siar Film' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Biaya Listrik' }, { 'key': 'operasional_2', 'label': 'Opersional Kendaraan' }, { 'key': 'operasional_3', 'label': 'Perawatan Alat' }, { 'key': 'operasional_4', 'label': 'Biaya Telekomunikasi (pulsa)' }] } }, 'K': { 'name': 'Aktivitas Telekomunikasi, Pemrograman Komputer, Konsultasi Infrastruktur Komputasi, dan Jasa Informasi Lainnya', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Hasil Pendapatan Usaha' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Karyawan' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Pembelian Voucher Pulsa, dan Kartu Perdana, Aksesoris Telekomunikasi' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Biaya Sewa Tempat' }, { 'key': 'operasional_2', 'label': 'Biaya Listrik, Air , dll' }] } }, 'L': { 'name': 'Aktivitas Keuangan dan Asuransi', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Perbankan' }, { 'key': 'nilai_produksi_2', 'label': 'Simpan Pinjam' }, { 'key': 'nilai_produksi_3', 'label': 'Asuransi' }, { 'key': 'nilai_produksi_4', 'label': 'Jasa Penunjang Asuransi' }, { 'key': 'nilai_produksi_5', 'label': 'Penukaran Valuta Asing' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Pegawai' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Biaya Pembelian Valuta Asing' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Listrik, Gas, Air' }, { 'key': 'operasional_2', 'label': 'ATK Dll' }, { 'key': 'operasional_3', 'label': 'Perawatan Peralatan Kerja' }, { 'key': 'operasional_4', 'label': 'Sewa Tempat' }], 'non_operasional': [{ 'key': 'non_operasional_1', 'label': 'Pajak,Retribusi, dll' }] } }, 'O': { 'name': 'Aktivitas Administratif dan Penunjang Usaha contoh Rental Mobil', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Pendapatan Usaha' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Pegawai' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Peralatan Mobil' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Listrik' }, { 'key': 'operasional_2', 'label': 'Air' }, { 'key': 'operasional_3', 'label': 'BBM' }], 'non_operasional': [{ 'key': 'non_operasional_1', 'label': 'Pajak' }] } }, 'Q': { 'name': 'Pendidikan', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Penerimaan dari Murid' }, { 'key': 'nilai_produksi_2', 'label': 'Penerimaan BOS' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Guru dan Pegawai Lainnya' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Cetak Buku Panduan dan Lembar Soal' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Listrik' }, { 'key': 'operasional_2', 'label': 'Air' }, { 'key': 'operasional_3', 'label': 'ATK' }], 'non_operasional': [{ 'key': 'non_operasional_1', 'label': 'Penyusutan Sarana pembelajaran' }] } }, 'R': { 'name': 'Aktivitas Kesehatan Manusia, dan Aktivitas Sosial', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Pendapatan Pasien Berobat' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Pegawai' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Pembelian Obat-obatan' }, { 'key': 'produksi_2', 'label': 'Masker, Sarung Tangan, Handsanitizer' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Listrik' }, { 'key': 'operasional_2', 'label': 'Air, dll' }] } }, 'S': { 'name': 'Kesenian, Hiburan, dan Rekreasi', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Pendapatan dari Tiket' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah Pegawai' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Cetak Tiket Masuk' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Air' }, { 'key': 'operasional_2', 'label': 'Listrik' }] } }, 'T': { 'name': 'Aktivitas Jasa Lainnya contoh salon', 'income': { 'pendapatan_lainnya': [{ 'key': 'pendapatan_lainnya_1', 'label': 'Bunga' }, { 'key': 'pendapatan_lainnya_2', 'label': 'Deviden' }, { 'key': 'pendapatan_lainnya_3', 'label': 'Donasi, Hibah, Transfer' }, { 'key': 'pendapatan_lainnya_4', 'label': 'dll' }], 'nilai_produksi': [{ 'key': 'nilai_produksi_1', 'label': 'Pendapatan dari Jasa yang bersangkutan' }] }, 'expense': { 'upah': [{ 'key': 'upah_1', 'label': 'Upah' }], 'produksi': [{ 'key': 'produksi_1', 'label': 'Bahan untuk Perawatan' }], 'operasional': [{ 'key': 'operasional_1', 'label': 'Listrik' }, { 'key': 'operasional_2', 'label': 'Air' }, { 'key': 'operasional_3', 'label': 'dll' }] } } };
+        const categoryMeta = { "income": { "nilai_produksi": { "title": "Nilai Produksi Barang dan Jasa", "desc": "Penerimaan utama hasil produksi barang atau penyediaan jasa.", "color": "emerald" }, "pendapatan_lainnya": { "title": "Pendapatan Lainnya dari Perusahaan", "desc": "Penerimaan non-utama seperti bunga bank, deviden, donasi, hibah, transfer, dll.", "color": "teal" } }, "expense": { "upah": { "title": "Upah, Gaji, Jaminan Sosial Pegawai", "desc": "Pengeluaran untuk upah pekerja, gaji staf, BPJS, tunjangan, dan jaminan sosial.", "color": "rose" }, "produksi": { "title": "Biaya Produksi", "desc": "Biaya operasional langsung seperti pembelian bahan baku, pupuk, bibit, bahan penolong, dll.", "color": "amber" }, "pembelian_barang": { "title": "Pembelian Barang Dijual", "desc": "Pembelian produk jadi yang dimaksudkan untuk langsung dijual kembali tanpa pengolahan.", "color": "orange" }, "operasional": { "title": "Biaya Operasional", "desc": "Biaya umum dan utilitas seperti listrik, air, BBM, internet, ATK, pemeliharaan alat, sewa tempat, dll.", "color": "sky" }, "non_operasional": { "title": "Biaya Non-Operasional", "desc": "Pengeluaran pendukung seperti pajak bumi/bangunan, retribusi daerah, bunga pinjaman, penyusutan aset, dll.", "color": "indigo" } } };
 
         // State input dinamis untuk rincian baru
         let customRows = {
@@ -436,10 +530,10 @@
         // Initialize KBLI select options
         window.addEventListener('DOMContentLoaded', () => {
             const selectEl = document.getElementById('kbli_select');
-            
+
             // Urutkan KBLI secara alfabetis berdasarkan kodenya
             const sortedKeys = Object.keys(KBLI_CONFIG).sort();
-            
+
             sortedKeys.forEach(code => {
                 const option = document.createElement('option');
                 option.value = code;
@@ -495,11 +589,11 @@
         // Render input fields dynamically based on configuration
         function renderFields(kbliCode) {
             const config = KBLI_CONFIG[kbliCode];
-            
+
             // Render Income sections (nilai_produksi first, then pendapatan_lainnya)
             const incomeContainer = document.getElementById('income_sections_container');
             incomeContainer.innerHTML = '';
-            
+
             const incomeOrder = ['nilai_produksi', 'pendapatan_lainnya'];
             const sortedIncomeKeys = Object.keys(config.income).sort((a, b) => {
                 const idxA = incomeOrder.indexOf(a);
@@ -509,7 +603,7 @@
                 if (idxB === -1) return -1;
                 return idxA - idxB;
             });
-            
+
             sortedIncomeKeys.forEach(subCat => {
                 if (config.income[subCat]) {
                     const card = createCategoryCard('income', subCat, config.income[subCat]);
@@ -520,7 +614,7 @@
             // Render Expense sections
             const expenseContainer = document.getElementById('expense_sections_container');
             expenseContainer.innerHTML = '';
-            
+
             Object.keys(config.expense).forEach(subCat => {
                 if (config.expense[subCat]) {
                     const card = createCategoryCard('expense', subCat, config.expense[subCat]);
@@ -539,7 +633,7 @@
 
             const card = document.createElement('div');
             card.className = `glass-card rounded-2xl p-5 border border-white relative overflow-hidden transition-all`;
-            
+
             // Accent indicator block
             let colorBorder = 'border-emerald-500';
             let colorBg = 'bg-emerald-500';
@@ -593,7 +687,7 @@
             `;
 
             const rowsContainer = card.querySelector(`#rows_container_${flowType}_${subCategoryKey}`);
-            
+
             // Append default fields
             defaultFields.forEach(field => {
                 const row = createInputRow(flowType, subCategoryKey, field.key, field.label, false);
@@ -658,18 +752,18 @@
         // Dynamic addition of custom input fields
         function addCustomRow(flowType, subCategoryKey, label = 'Rincian Baru', loadedVal = null) {
             const rowsContainer = document.getElementById(`rows_container_${flowType}_${subCategoryKey}`);
-            
+
             // Initialize count
             if (!customRows[flowType][subCategoryKey]) {
                 customRows[flowType][subCategoryKey] = 0;
             }
             customRows[flowType][subCategoryKey]++;
-            
+
             const fieldKey = `custom_${customRows[flowType][subCategoryKey]}`;
             const row = createInputRow(flowType, subCategoryKey, fieldKey, label, true);
-            
+
             rowsContainer.appendChild(row);
-            
+
             if (loadedVal !== null) {
                 const inputEl = row.querySelector(`#input_${flowType}_${subCategoryKey}_${fieldKey}`);
                 inputEl.value = loadedVal;
@@ -700,7 +794,7 @@
             const targetId = `${inputEl.id}_yearly`;
             const targetPrintId = `${inputEl.id}_yearly_print`;
             const yearlyVal = value * 12;
-            
+
             document.getElementById(targetId).value = formatNumberPlain(yearlyVal);
             document.getElementById(targetPrintId).textContent = formatIDR(yearlyVal);
 
@@ -715,7 +809,7 @@
             if (!kbliCode) return;
 
             const config = KBLI_CONFIG[kbliCode];
-            
+
             let grandTotalIncomeMonthly = 0;
             let grandTotalIncomeYearly = 0;
             let grandTotalExpenseMonthly = 0;
@@ -725,7 +819,7 @@
             Object.keys(config.income).forEach(subCat => {
                 let subTotalMonthly = 0;
                 let subTotalYearly = 0;
-                
+
                 const rowsContainer = document.getElementById(`rows_container_income_${subCat}`);
                 if (rowsContainer) {
                     const rows = rowsContainer.querySelectorAll('[data-field-key]');
@@ -748,7 +842,7 @@
             Object.keys(config.expense).forEach(subCat => {
                 let subTotalMonthly = 0;
                 let subTotalYearly = 0;
-                
+
                 const rowsContainer = document.getElementById(`rows_container_expense_${subCat}`);
                 if (rowsContainer) {
                     const rows = rowsContainer.querySelectorAll('[data-field-key]');
@@ -808,11 +902,11 @@
                 netTitle.textContent = 'Margin Bersih (Surplus)';
                 netTitle.className = 'text-[10px] font-bold text-emerald-600 uppercase tracking-wider mb-1';
                 netYearlyEl.className = 'text-lg font-black text-emerald-600';
-                
+
                 printNetLabel.textContent = 'SURPLUS BERSIH (A - B)';
                 printNetM.className = 'text-right font-black text-emerald-800';
                 printNetY.className = 'text-right font-black text-emerald-800';
-                
+
                 if (warningAlert) warningAlert.classList.add('hidden');
             } else {
                 // Loss styles
@@ -820,11 +914,11 @@
                 netTitle.textContent = 'Margin Bersih (Defisit)';
                 netTitle.className = 'text-[10px] font-bold text-rose-600 uppercase tracking-wider mb-1';
                 netYearlyEl.className = 'text-lg font-black text-rose-600';
-                
+
                 printNetLabel.textContent = 'DEFISIT BERSIH (A - B)';
                 printNetM.className = 'text-right font-black text-rose-800';
                 printNetY.className = 'text-right font-black text-rose-800';
-                
+
                 if (warningAlert) warningAlert.classList.remove('hidden');
             }
         }
@@ -838,16 +932,16 @@
         function saveDraft() {
             const selectEl = document.getElementById('kbli_select');
             const kbliCode = selectEl.value;
-            
+
             const respondentName = document.getElementById('nama_responden').value;
             const slsValue = document.getElementById('sls').value;
 
             // Collect all input values including custom ones
             const inputsData = {};
-            
+
             if (kbliCode) {
                 const config = KBLI_CONFIG[kbliCode];
-                
+
                 // Income
                 inputsData.income = {};
                 Object.keys(config.income).forEach(subCat => {
@@ -858,12 +952,12 @@
                         rows.forEach(row => {
                             const fKey = row.dataset.fieldKey;
                             const isCustom = row.dataset.isCustom === 'true';
-                            
+
                             let label = '';
                             if (isCustom) {
                                 label = row.querySelector('input[type="text"]').value;
                             }
-                            
+
                             const val = document.getElementById(`input_income_${subCat}_${fKey}`).value;
                             inputsData.income[subCat].push({
                                 key: fKey,
@@ -885,12 +979,12 @@
                         rows.forEach(row => {
                             const fKey = row.dataset.fieldKey;
                             const isCustom = row.dataset.isCustom === 'true';
-                            
+
                             let label = '';
                             if (isCustom) {
                                 label = row.querySelector('input[type="text"]').value;
                             }
-                            
+
                             const val = document.getElementById(`input_expense_${subCat}_${fKey}`).value;
                             inputsData.expense[subCat].push({
                                 key: fKey,
@@ -919,7 +1013,7 @@
             const toast = document.getElementById('toast');
             toast.classList.remove('hidden');
             toast.classList.add('flex');
-            
+
             clearTimeout(toastTimeout);
             toastTimeout = setTimeout(() => {
                 toast.classList.add('hidden');
@@ -937,11 +1031,11 @@
 
                 document.getElementById('nama_responden').value = draft.respondentName || '';
                 document.getElementById('sls').value = draft.slsValue || '';
-                
+
                 if (draft.kbliCode) {
                     const selectEl = document.getElementById('kbli_select');
                     selectEl.value = draft.kbliCode;
-                    
+
                     // Trigger dynamic rendering first
                     handleKbliChange();
 
@@ -1021,8 +1115,17 @@
             const nameVal = document.getElementById('nama_responden').value || '_______________________';
             document.getElementById('print_resp_name').textContent = `( ${nameVal} )`;
 
+            // Temporarily set document title to respondent name so browser uses it as the PDF filename
+            const originalTitle = document.title;
+            const pdfName = document.getElementById('nama_responden').value.trim() || 'Rekap_KBLI';
+            document.title = pdfName;
+
             window.print();
+
+            // Restore original title after print dialog closes
+            setTimeout(() => { document.title = originalTitle; }, 1000);
         }
     </script>
 </body>
+
 </html>
