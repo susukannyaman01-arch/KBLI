@@ -205,7 +205,7 @@
 <body class="py-8 px-4 sm:px-6 lg:px-8 font-sans">
 
     <!-- Container Utama -->
-    <div class="max-w-7xl mx-auto print-container">
+    <div class="max-w-7xl mx-auto">
         
         <!-- AUTHOR CREDITS -->
         <div class="text-center mb-2 no-print select-none">
@@ -230,8 +230,11 @@
             </p>
         </header>
 
-        <!-- HEADER UNTUK CETAK/PRINT ONLY -->
-        <div class="hidden print-only mb-6">
+        <!-- AREA CETAK/PDF (Hanya berisi konten yang dicetak/PDF) -->
+        <div class="print-container bg-transparent" id="printable_content">
+
+            <!-- HEADER UNTUK CETAK/PRINT ONLY -->
+            <div class="hidden print-only mb-6">
             <div class="print-title">LEMBAR PERHITUNGAN REKAPITULASI KEUANGAN RESPONDEN</div>
             <div class="border-b-4 border-double border-slate-800 my-4"></div>
         </div>
@@ -440,6 +443,8 @@
                 </div>
             </div>
         </section>
+
+        </div> <!-- Selesai AREA CETAK/PDF -->
 
         <!-- AUTO-SAVE TOAST (no-print) -->
         <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-slate-100 px-4 py-3 rounded-2xl shadow-xl z-50 text-xs font-semibold hidden items-center gap-2 toast-animate no-print">
@@ -1059,7 +1064,7 @@
             const nameVal = document.getElementById('nama_responden').value || 'Responden';
             document.getElementById('print_resp_name').textContent = `( ${nameVal === 'Responden' ? '_______________________' : nameVal} )`;
 
-            const element = document.querySelector('.print-container');
+            const element = document.getElementById('printable_content');
             
             // Add class for PDF styling
             document.body.classList.add('pdf-mode');
