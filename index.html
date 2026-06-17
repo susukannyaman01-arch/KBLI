@@ -21,8 +21,6 @@
             }
         }
     </script>
-    <!-- html2pdf.js library for direct client-side PDF download -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         /* Custom Premium Styles */
         body {
@@ -64,16 +62,42 @@
 
         /* Print Media styling */
         @media print {
+            @page {
+                size: A4;
+                margin: 1.2cm 1.5cm;
+            }
             body {
                 background: white !important;
                 color: black !important;
-                font-size: 11pt;
+                font-size: 10pt;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
             .no-print {
                 display: none !important;
             }
             .print-only {
                 display: block !important;
+            }
+            /* Flatten glass-card effects for clean print */
+            .glass-card {
+                background: white !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                filter: none !important;
+                box-shadow: none !important;
+                border: 1px solid #cbd5e1 !important;
+            }
+            /* Avoid page break inside cards */
+            .glass-card, section, .space-y-6 > div {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+            /* Preserve 2-column layout on print */
+            #kalkulator_forms {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1cm !important;
             }
             .print-container {
                 box-shadow: none !important;
@@ -126,79 +150,12 @@
                 color: black !important;
                 padding: 2px 6px !important;
             }
-        }
-
-        /* PDF Generation styling (html2pdf) */
-        body.pdf-mode {
-            background: white !important;
-            color: black !important;
-            font-size: 11pt;
-        }
-        body.pdf-mode * {
-            animation: none !important;
-            transition: none !important;
-        }
-        body.pdf-mode .glass-card {
-            background: white !important;
-            backdrop-filter: none !important;
-            filter: none !important;
-            box-shadow: none !important;
-            border: 1px solid #cbd5e1 !important;
-        }
-        body.pdf-mode .no-print {
-            display: none !important;
-        }
-        body.pdf-mode .print-only {
-            display: block !important;
-        }
-        body.pdf-mode .print-container {
-            box-shadow: none !important;
-            border: none !important;
-            background: transparent !important;
-            backdrop-filter: none !important;
-            padding: 0 !important;
-            max-width: 100% !important;
-            margin: 0 !important;
-        }
-        body.pdf-mode .print-table {
-            border-collapse: collapse !important;
-            width: 100% !important;
-        }
-        body.pdf-mode .print-table th, body.pdf-mode .print-table td {
-            border: 1px solid #1e293b !important;
-            padding: 6px 8px !important;
-        }
-        body.pdf-mode .print-table th {
-            background-color: #f1f5f9 !important;
-            color: black !important;
-        }
-        body.pdf-mode .print-title {
-            font-size: 16pt !important;
-            text-align: center;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-        body.pdf-mode .print-section-title {
-            font-size: 13pt !important;
-            font-weight: bold;
-            margin-top: 15px;
-            border-bottom: 2px solid #000;
-            padding-bottom: 4px;
-        }
-        body.pdf-mode input, body.pdf-mode select {
-            border: none !important;
-            background: transparent !important;
-            padding: 0 !important;
-            width: 100% !important;
-            pointer-events: none !important;
-            color: black !important;
-            font-weight: 500 !important;
-        }
-        body.pdf-mode .print-badge {
-            border: 1px solid #000 !important;
-            background: transparent !important;
-            color: black !important;
-            padding: 2px 6px !important;
+            /* Color accents - keep them on print */
+            .bg-emerald-50 {
+                background-color: #f0fdf4 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
         }
     </style>
 </head>
@@ -389,7 +346,7 @@
                         Reset
                     </button>
                     <!-- PDF Button -->
-                    <button onclick="exportToPDF()" class="flex-1 py-3 px-5 bg-gradient-to-tr from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold rounded-xl text-sm transition-all shadow-md shadow-emerald-600/10 flex items-center justify-center gap-2 outline-none focus:ring-2 focus:ring-emerald-500">
+                    <button onclick="exportToPDF()" id="btn_unduh_pdf" class="flex-1 py-3 px-5 bg-gradient-to-tr from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold rounded-xl text-sm transition-all shadow-md shadow-emerald-600/10 flex items-center justify-center gap-2 outline-none focus:ring-2 focus:ring-emerald-500">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                         </svg>
@@ -1058,50 +1015,13 @@
             }
         }
 
-        // Direct PDF generation and download
+        // PDF: use browser native print dialog (reliable for complex multi-page layouts)
         function exportToPDF() {
             // Set respondent name for print signature box
-            const nameVal = document.getElementById('nama_responden').value || 'Responden';
-            document.getElementById('print_resp_name').textContent = `( ${nameVal === 'Responden' ? '_______________________' : nameVal} )`;
+            const nameVal = document.getElementById('nama_responden').value || '_______________________';
+            document.getElementById('print_resp_name').textContent = `( ${nameVal} )`;
 
-            const element = document.getElementById('printable_content');
-            
-            // Add class for PDF styling
-            document.body.classList.add('pdf-mode');
-            
-            // PDF configuration options
-            const opt = {
-                margin:       [0.4, 0.4, 0.4, 0.4],
-                filename:     `Rekap_Keuangan_KBLI_${nameVal.replace(/\s+/g, '_')}.pdf`,
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { 
-                    scale: 2, 
-                    useCORS: true,
-                    logging: false,
-                    letterRendering: true
-                },
-                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-            };
-
-            try {
-                if (typeof html2pdf === 'undefined') {
-                    throw new Error("html2pdf library is not loaded");
-                }
-                // Use html2pdf to download
-                html2pdf().set(opt).from(element).save().then(() => {
-                    document.body.classList.remove('pdf-mode');
-                }).catch(err => {
-                    console.error("Gagal membuat PDF:", err);
-                    document.body.classList.remove('pdf-mode');
-                    // Fallback to print if library fails
-                    window.print();
-                });
-            } catch (err) {
-                console.error("Gagal memanggil html2pdf:", err);
-                document.body.classList.remove('pdf-mode');
-                // Fallback to print if library fails
-                window.print();
-            }
+            window.print();
         }
     </script>
 </body>
